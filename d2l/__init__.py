@@ -52,6 +52,20 @@ def set_figsize(size=(3.5, 2.5)):
     if hasattr(plt, 'rcParams'):
         plt.rcParams['figure.figsize'] = size
 
+def plot(x, ys, xlabel=None, ylabel=None, legend=None, figsize=(3.5, 2.5)):
+    """Quick plot helper, mimicking d2l.plot."""
+    set_figsize(figsize)
+    if not hasattr(ys[0], "__len__"):  # single curve
+        ys = [ys]
+    for y in ys:
+        plt.plot(x, y)
+    if legend:
+        plt.legend(legend)
+    if xlabel:
+        plt.xlabel(xlabel)
+    if ylabel:
+        plt.ylabel(ylabel)
+
 __all__ = [
     # stdlib
     'collections','hashlib','inspect','math','os','random','re','shutil','sys',
