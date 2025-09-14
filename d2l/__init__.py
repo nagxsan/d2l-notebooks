@@ -74,5 +74,5 @@ __all__ = [
     'pd','requests','display','plt','backend_inline','np','torch','torchvision',
     'Image','distance_matrix','nn','F','transforms',
     # helpers
-    'use_svg_display','set_figsize',
+    'use_svg_display','set_figsize','plot',
 ]
